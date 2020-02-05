@@ -1,1 +1,34 @@
-{"hello":"world"}
+{
+  "assets": {
+    "style": ["body: { background: #ccc; }"],
+    "javascript": ["(function() { console.log(\"hello world\") })()"],
+    "templates": {
+      "default": "<h2>{{page.title}}</h2><p>{{page.content | html}}</p>"
+    },
+    "partials":{
+      "header": "<header>{{data.name}}</header>",
+      "footer": "<footer>&copy; 2020 {{data.name}}</footer>"
+    }
+  },
+  "pages": [
+    {
+      "title": "Home",
+      "uri": "#/home",
+      "template": "default",
+      "home": true,
+      "content": "<partial name=\"header\"></partial><p>Hello World</p><partial name=\"footer\"></name>",
+      "controller": "homeController"
+    }
+  ],
+  "data": {
+    "name": "A Title",
+    "language": {
+      "en": {
+        "title": "A Title"
+      },
+      "fr": {
+        "title": "En Title"
+      }
+    }
+  }
+}
